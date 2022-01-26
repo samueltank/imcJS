@@ -13,15 +13,18 @@ bVerde.addEventListener("click", toggleGreen);
 /* Functions */
 function toggleRed() {
   titulo.innerHTML = nome.value;
+  titulo.className = "";
   titulo.classList.toggle("vermelho");
 }
 
 function toggleBlue() {
   titulo.innerHTML = nome.value;
+  titulo.className = "";
   titulo.classList.toggle("azul");
 }
 
 function toggleGreen() {
   titulo.innerHTML = nome.value;
+  titulo.className = "";
   titulo.classList.toggle("verde");
 }

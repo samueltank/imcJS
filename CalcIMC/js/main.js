@@ -1,29 +1,33 @@
 'use strict'; /* -Ai, maldito, me ajuda ai */
 /* Declaração das variáveis */
-const btn = document.getElementById("calcular");
-let nome, altura, peso, result, resultTxt, texto, msg;
+const btn      = document.getElementById("calcular");
+let peso       = document.getElementById("peso");
+let InpPeso    = document.getElementById("InpPeso");
+let nome, altura, result, resultTxt, texto, msg;
 
 /* Ouvintes */
 btn.addEventListener("click", ProcessarResultado);
+peso.addEventListener('input', function() {
+  InpPeso.value = this.value;
+});
 
 /* Funções */
-function ProcessarResultado(event) {
+function ProcessarResultado() {
   /* Método de cálculo */
-
   nome      = document.getElementById("nome").value;
   altura    = document.getElementById("altura").value;
   peso      = document.getElementById("peso").value;
   resultTxt = document.getElementById("resultado");
   msg       = document.getElementById("menssagem");
-  console.log(msg);
-
+    
   if(camposvalidos()) {
     result = calcularIMC(altura, peso);
     texto  = classificarIMC(result);
+    msg    = colorMsg(result, msg);
 
-    resultTxt.innerHTML = `${nome.toUpperCase()}, seu IMC é ${result.toFixed(2)} ${texto}. ${msg}`;
-
-    event.preventDefault();
+    console.log(msg);
+    resultTxt.textContent = `${nome.toUpperCase()}, seu IMC é ${result.toFixed(2)} ${texto}.`;
+    resultTxt.appendChild(msg);
   }
 }
 
@@ -52,13 +56,16 @@ function classificarIMC(result) {
   return texto;
 }
 
-function colorMsg(result) {
-  if(result <= 25) {
-    return 0;
-  } else if(result >= 40) {
-    return 1;
+function colorMsg(result, element) {
+  element.setAttribute("class", "");
+  if(result > 18.5 && result <= 25) {
+    element.innerHTML = "PARABÉNS!";
+    element.classList.add("verde");
+  } else if(result > 40) {
+    element.classList.add("vermelho");
+    element.innerHTML = "CUIDADO!";
+  } else {
+    element.innerHTML = "";
   }
+  return element;
 }
-
-
-// nome !== "" && altura !== "" && peso !== "";

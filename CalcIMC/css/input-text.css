@@ -25,3 +25,40 @@
 .input label {
   font: bold 1.5rem serif;
 }
+.displayPeso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input input[type="range"] {
+  width: 12.4rem;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 15px;
+  background-color: aqua;
+  outline: none;
+  cursor: pointer;
+}
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.input input[type="range"]::-webkit-slider-runnable-track {
+  background-color: white;
+  border-radius: 15px;
+  height: 0.5rem;
+  width: 10rem;
+}
+.input input[type="range"]::-webkit-slider-thumb {
+  margin-top: -0.4rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: var(--primary-color);
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+}

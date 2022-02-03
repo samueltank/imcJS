@@ -17,45 +17,72 @@
         <div class="title">Calculadora - IMC</div>
         <form id="form" autocomplete="on">
           <div class="input">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required />
+            <label for="nome">Nome</label>
+            <input 
+              type="text" 
+              id="nome" 
+              maxlength="25" 
+              required 
+            />
           </div>
-          <div class="input">
-            <label for="altura">Altura:</label>
-            <input type="number" id="altura" step="any" required />
+          <div class="input inputRange">
+            <label for="altura">Altura</label>
+            <input 
+              type="range" 
+              id="altura" 
+              min="1.25" 
+              max="2.5" 
+              step="0.01" 
+            />
           </div>
-          <div class="input">
-            <label for="peso">Peso:</label>
+          <div class="input displayAltura">
+            <input
+              type="number"
+              name="inpAltura"
+              id="inpAltura"
+              min="1.25"
+              max="2.5"
+              step="0.01"
+              value="1.80"
+              readonly
+            />
+          </div>
+          <div class="input inputRange">
+            <label for="peso">Peso</label>
             <input
               type="range"
               name="peso"
               id="peso"
-              min="0"
-              max="600"
+              min="50"
+              max="300"
               step="0.01"
-              value="300"
-              required
+              value="180"
             />
           </div>
           <div class="input displayPeso">
             <input
-              type="number" 
-              name="InpPeso" 
+              type="number"
+              name="InpPeso"
               id="InpPeso"
-              min="0"
-              max="600" 
-              value="300"
-              required
-              disabled
+              min="50"
+              max="300"
+              value="180"
+              pattern=""
+              readonly
             />
           </div>
         </form>
-        <button id="calcular" class="button template">Calcular</button>
+        <input
+          type="submit"
+          value="Calcular"
+          id="calcular"
+          class="button template"
+        />
         <div class="result" id="resultado">
           <span id="menssagem">&nbsp;</span>
         </div>
       </div>
     </main>
-    <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
   </body>
 </html>

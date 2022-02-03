@@ -30,7 +30,6 @@ main {
   color: #fff;
   background-color: #111;
   z-index: 1;
-  gap: 1rem;
 }
 .title {
   display: flex;
@@ -49,11 +48,6 @@ form {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 1rem;
-}
-button {
-  width: 300px;
-  height: 40px;
 }
 .result {
   display: flex;
@@ -70,7 +64,9 @@ button {
 }
 .verde {
   color: green;
+  text-align: center;
 }
 .vermelho {
   color: red;
+  text-align: center;
 }

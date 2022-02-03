@@ -1,6 +1,8 @@
-.button {
+input[type="submit"] {
+  width: 300px;
   height: 40px;
   padding: 6px 12px;
+  margin-top: 1rem;
   border-style: none;
   outline: none;
   background-color: black;
